@@ -57,15 +57,28 @@ const items =[
 
 export default function Sugestions() {
   return (
-    <Container>
-    {
-      items.map((item) =>(
-        <Option key={item.key}>
-          <Img source={item.img}/>
-          <Label>{item.label}</Label>
-        </Option>
-      ))
-    }
-   </Container>
+    <>
+      <Option
+      //onPress={() => ListView_Ref.scrollToEnd({animated: true, duration:100}) }
+      onPress={() => ListView_Ref.scrollTo({x: 100, y: 0, animated: true}) }
+      
+      >
+      <Label>A</Label>
+      </Option>
+
+      <Container
+        ref={(ref) => {
+        ListView_Ref = ref; }}
+      >
+      {
+        items.map((item) =>(
+          <Option key={item.key}>
+            <Img source={item.img}/>
+            <Label>{item.label}</Label>
+          </Option>
+        ))
+      }
+    </Container>
+   </>
   );
 }

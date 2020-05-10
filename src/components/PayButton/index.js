@@ -9,6 +9,7 @@ export default function PayButton({onPress, focused}) {
    <TouchableWithoutFeedback onPress={onPress}>
     <LinearGradientStl
         colors={
+            
             focused 
             ? ['#FFF',"#EDEDED"] 
             : ['#00FC6C', '#00AC4A']}
